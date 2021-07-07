@@ -489,6 +489,7 @@ module JSS
       group.add_element('is_smart').text = @is_smart
       if @is_smart
         group << @criteria.rest_xml if @criteria
+        group.add_element('computers').text = nil
       else
         group << self.class::MEMBER_CLASS.xml_list(@members, :id)
       end
